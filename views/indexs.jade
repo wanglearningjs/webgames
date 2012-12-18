@@ -1,0 +1,21 @@
+script(type="text/javascript", src="javascripts/jquery-1.6.1.min.js")
+link(rel="stylesheet",href="stylesheets/style.css")
+script(src="socket.io/socket.io.js")
+script(src="host.js")
+script
+  var socket = io.connect(httpUrl);
+  // 连接的初始化
+  socket.on('connect', function () {
+    socket.emit('my other event', { my: 'init from client' });
+  })
+  socket.on('news', function (data) {
+    socket.emit('my other event', { my: 'data' });
+  });
+  socket.on('system msg', function (data) {
+    alert(data.msg);
+  })
+  
+  
+
+div
+  测试下首页

@@ -1,0 +1,70 @@
+#msgDivJRJIM {
+	width: 400px;
+	height: 300px;
+	border: solid 1px pink;
+}
+
+#msgDivJRJIMHeader {
+	width: 100%;
+	height: 60px;
+	border: solid 1px pink;
+}
+
+#msgDivJRJIMHeader p {
+	float: left;
+	margin: 5 5;
+}
+
+#msgDivJRJIMHeader p img {
+	width: 50px;
+	height: 50px;
+}
+
+.spanBlock200 {
+	margin: 0 0;
+	width: 200px;
+	display: block;
+	overflow: hidden;
+}
+
+#msgDivJRJIMMsg {
+	width: 100%;
+	height: 150px;
+	overflow-y: scroll;
+	border: solid 1px pink;
+}
+
+#msgDivJRJIMSend {
+	width: 100%;
+	height: 90px;
+	padding: 0;
+	margin: 0;
+}
+
+.msgDivJRJIMSendMsg {
+	float: left;
+	width: 80%;
+	height: 100%;
+}
+
+.msgDivJRJIMSendBtn {
+	margin: 2 3;
+	float: left;
+	border: solid 1px pink;
+	width: 72px;
+	height: 80px;
+	padding: 0;
+}
+
+.msgDivJRJIMSendBtn p {
+	height: 76px;
+	float: left;
+	padding: 0;
+}
+
+#msgDivJRJIMSendTextarea {
+	resize: none;
+	margin: 3 3;
+	width: 100%;
+	height: 80px;
+}

@@ -1,0 +1,63 @@
+script(type="text/javascript", src="/javascripts/jquery-1.6.1.min.js")
+link(rel="stylesheet",href="/stylesheets/style2.css")
+script(type="text/javascript")
+  $(document).ready(function() {
+    if(parent.document.getElementById("mask")){
+      $("#imJrjMenus").show();
+    }
+    $("#imJrjClose").live("click",function(){
+      if(parent.document.getElementById("mask")){
+        parent.document.getElementById("mask").style.display = "none";
+      }else{
+        self.opener = null;
+        self.close();
+      }
+    });
+    $("#msgDivSend").live("click",function(){
+      var talkInfo = $("#msgDivJRJIMSendTextarea").val();
+      var fromId = $("#msgDivJRJFromId").val();
+      var toId = $("#msgDivJRJToId").val();
+      var fromName = $("#msgDivJRJFromName").val();
+      var toName = $("#msgDivJRJToName").val();
+      parent.$("#msg").val(talkInfo);
+      parent.$("#fromId").val(fromId);
+      parent.$("#toId").val(toId);
+      parent.$("#fromName").val(fromName);
+      parent.$("#toName").val(toName);
+      parent.$("#sendMsg").trigger("click");
+      if(parent.document.getElementById("mask")){
+        //parent.document.getElementById("mask").style.display = "none";
+      }else{
+        //self.opener = null;
+        //self.close();
+      }
+    });
+  });
+<div id="msgDivJRJUser" style="display:none;">
+<input type="hidden" id="msgDivJRJFromId" value="#{from.id}"/>
+<input type="hidden" id="msgDivJRJFromName" value="#{from.nickName}"/>
+<input type="hidden" id="msgDivJRJToId" value="#{user._id}"/>
+<input type="hidden" id="msgDivJRJToName" value="#{user.nickName}"/>
+</div>
+<div id='msgDivJRJIM'>
+<div id="msgDivJRJIMHeader">
+<p>
+<img id="msgDivJRJIMUserLogo" src="/images/user.jpg"/>
+</p>
+<p>
+<span id="msgDivJRJIMUserName" class="spanBlock200">#{user.nickName}</span> <span id="msgDivJRJIMUserDesc" class="spanBlock200"><!--最新说说--></span>
+</p>
+<p style="float: right;display:none;" id="imJrjMenus">
+<span><a href="#" title="最小化">_</a> </span> <span><a href="#" title="最大化">口</a> </span> <span><a href="#" title="关闭" id="imJrjClose">x</a> </span>
+</p>
+</div>
+<div id="msgDivJRJIMMsg"></div>
+<div id="msgDivJRJIMSend">
+<div class="msgDivJRJIMSendMsg">
+<textarea id="msgDivJRJIMSendTextarea"></textarea>
+</div>
+<div style="float: left; width: 20%;">
+<a href="#" class="msgDivJRJIMSendBtn" id="msgDivSend"><p>发送</p> </a>
+</div>
+</div>
+</div>
